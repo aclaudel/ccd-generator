@@ -1,6 +1,6 @@
 # CCD Header notes
 
-### <id>
+### id
 ```xml
 <!-- Globally unique identifier for the document  -->
 <id root="2.16.840.1.113883.19.5.99999.1"
@@ -10,7 +10,7 @@
 - Is ID unique to the instance
 or to an abstract document (which can have multiple instances)?
 
-### <code>
+### code
 ```xml
 <code code="34133-9" 
     displayName="Summarization of Episode Note" 
