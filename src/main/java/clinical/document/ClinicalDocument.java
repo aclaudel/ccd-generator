@@ -6,7 +6,6 @@ import clinical.document.header.RecordTarget;
 import clinical.document.header.TemplateId;
 import clinical.document.header.TypeId;
 
-import javax.xml.bind.annotation.XmlAccessorOrder;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
