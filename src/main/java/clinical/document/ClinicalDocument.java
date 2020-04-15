@@ -10,9 +10,8 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 
-@XmlRootElement(name = "clinical.document.ClinicalDocument")
+@XmlRootElement(name = "ClinicalDocument")
 @XmlSeeAlso(CCD.class)
-@XmlAccessorOrder
 public abstract class ClinicalDocument {
 
   @XmlElement
