@@ -46,3 +46,9 @@ or to an abstract document (which can have multiple instances)?
 ### name/given
 - voorvoegsel
 - Does `suffix` exist? Because it's used in the example in the implementation guide
+
+### addr
+- They're all the same so far (guardian/birthplace)
+
+### performer/functionCode
+- Where do we get it?
