@@ -42,3 +42,7 @@ or to an abstract document (which can have multiple instances)?
 
 ### language
 - Is it always `en-US`
+
+### name/given
+- voorvoegsel
+- Does `suffix` exist? Because it's used in the example in the implementation guide
