@@ -5,8 +5,8 @@ import javax.xml.bind.annotation.XmlElement;
 public class PatientRole {
 
     @XmlElement(name = "addr")
-    public final Address address = new Address();
+    public Address address;
 
     @XmlElement
-    public final Patient patient = new Patient();
+    public Patient patient;
 }

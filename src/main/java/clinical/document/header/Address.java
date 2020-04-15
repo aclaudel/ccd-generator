@@ -6,21 +6,29 @@ import javax.xml.bind.annotation.XmlElement;
 public class Address {
 
     @XmlAttribute
-    public final String use = "HP";
+    public final String use;
 
     @XmlElement
-    public final String streetAddressLine = "2222 Home Street";
+    public final String streetAddressLine;
 
     @XmlElement
-    public final String city = "Beaverton";
+    public final String city;
 
     @XmlElement
-    public final String state = "OR";
+    public final String state;
 
     @XmlElement
-    public final String postalCode = "97867";
+    public final String postalCode;
 
     @XmlElement
     public final String country = "US";
 
+    public Address(String use, String streetAddressLine, String city, String state, String postalCode){
+
+        this.use = use;
+        this.streetAddressLine = streetAddressLine;
+        this.city = city;
+        this.state = state;
+        this.postalCode = postalCode;
+    }
 }

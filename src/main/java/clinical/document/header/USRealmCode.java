@@ -2,7 +2,7 @@ package clinical.document.header;
 
 import javax.xml.bind.annotation.XmlAttribute;
 
-public class RealmCode {
+public class USRealmCode {
 
     @XmlAttribute
     public final String code = "US";

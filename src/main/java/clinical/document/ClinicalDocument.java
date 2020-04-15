@@ -1,29 +1,39 @@
 package clinical.document;
 
 import clinical.document.ccd.CCD;
-import clinical.document.header.RealmCode;
-import clinical.document.header.RecordTarget;
-import clinical.document.header.TemplateId;
-import clinical.document.header.TypeId;
+import clinical.document.header.*;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
+import java.util.ArrayList;
 
-@XmlRootElement(name = "ClinicalDocument")
-@XmlSeeAlso(CCD.class)
+
 public abstract class ClinicalDocument {
 
   @XmlElement
-  public final RealmCode realmCode = new RealmCode();
+  public final USRealmCode realmCode = new USRealmCode();
 
   @XmlElement
-  public final TypeId typeId = new TypeId();
+  public final ClinicalDocumentTypeId typeId = new ClinicalDocumentTypeId();
 
-  @XmlElement
-  public final TemplateId templateId = new TemplateId("2.16.840.1.113883.10.20.22.1", "2015-08-01");
+  @XmlElement(name = "templateId")
+  public final ArrayList<TemplateId> templateIds = new ArrayList<>();
 
   @XmlElement
   public final RecordTarget recordTarget = new RecordTarget();
 
+
+  public ClinicalDocument(){
+    templateIds.add(new TemplateId("2.16.840.1.113883.10.20.22.1", "2015-08-01"));
+  }
+
+  public void setPatient(Patient patient){
+    this.recordTarget.patientRole.patient = patient;
+  }
+
+  public void setPatientAddress(Address address)
+  {
+    this.recordTarget.patientRole.address = address;
+  }
 }
