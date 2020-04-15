@@ -20,4 +20,18 @@ or to an abstract document (which can have multiple instances)?
 - Where do we retrieve it?
 - Can we determine this from the workflow?
 
-##################
+### title
+- How do we know which title to put / should we use the displayName?
+ 
+### confidentialityCode
+```xml
+<confidentialityCode 
+    code="N" 
+    displayName="normal" 
+    codeSystem="2.16.840.1.113883.5.25" 
+    codeSystemName="Confidentiality"/>
+```
+- Is it dynamic? If so, where do we retrieve it?
+
+### language
+- Is it always `en-US`

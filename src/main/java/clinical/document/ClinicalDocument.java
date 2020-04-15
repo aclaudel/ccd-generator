@@ -2,6 +2,7 @@ package clinical.document;
 
 import clinical.document.ccd.CCD;
 import clinical.document.header.RealmCode;
+import clinical.document.header.RecordTarget;
 import clinical.document.header.TemplateId;
 import clinical.document.header.TypeId;
 
@@ -22,5 +23,8 @@ public abstract class ClinicalDocument {
 
   @XmlElement
   public final TemplateId templateId = new TemplateId("2.16.840.1.113883.10.20.22.1", "2015-08-01");
+
+  @XmlElement
+  public final RecordTarget recordTarget = new RecordTarget();
 
 }
