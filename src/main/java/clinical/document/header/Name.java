@@ -13,8 +13,8 @@ public class Name {
     @XmlElement
     public final Family family;
 
-    public Name(String given, String family) {
+    public Name(String given, String family, String qualifier) {
         this.given = given;
-        this.family = new Family(family);
+        this.family = new Family(family, qualifier);
     }
 }

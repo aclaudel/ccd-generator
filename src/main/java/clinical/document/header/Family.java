@@ -6,12 +6,13 @@ import javax.xml.bind.annotation.XmlValue;
 public class Family {
 
     @XmlAttribute
-    public final String qualifier = "SP";
+    public final String qualifier;
 
     @XmlValue
     public final String family;
 
-    public Family(String family) {
-        this.family = family;
+    public Family(String familyName, String qualifier) {
+        this.family = familyName;
+        this.qualifier = qualifier;
     }
 }
