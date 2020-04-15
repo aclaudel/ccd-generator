@@ -1,6 +1,4 @@
-package ccd;
-
-import ccd.model.CCD;
+package clinical.document.ccd;
 
 public class CCDGenerator {
 

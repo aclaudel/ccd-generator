@@ -1,4 +1,4 @@
-package xml;
+package clinical.document.xml;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;

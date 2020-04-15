@@ -1,5 +1,5 @@
-import ccd.CCDGenerator;
-import xml.XmlMarshaller;
+import clinical.document.ccd.CCDGenerator;
+import clinical.document.xml.XmlMarshaller;
 
 import javax.xml.bind.JAXBException;
 
