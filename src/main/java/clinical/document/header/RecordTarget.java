@@ -7,7 +7,4 @@ public class RecordTarget {
     @XmlElement
     public final PatientRole patientRole = new PatientRole();
 
-    @XmlElement
-    public final Patient patient = new Patient();
-
 }
