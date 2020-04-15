@@ -1,5 +1,12 @@
 # CCD Header notes
 
+## XML Namespace
+
+With JAXB, the namespace prefix is ns2.
+If it's a problem, we can still change it using `@XmlSchema` in `package-info.java`.
+
+## XML tags
+
 ### id
 ```xml
 <!-- Globally unique identifier for the document  -->
