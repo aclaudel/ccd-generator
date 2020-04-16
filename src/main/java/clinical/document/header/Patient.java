@@ -1,5 +1,7 @@
 package clinical.document.header;
 
+import clinical.document.shared.GenderCode;
+
 import javax.xml.bind.annotation.XmlElement;
 
 public class Patient {
@@ -10,8 +12,12 @@ public class Patient {
     @XmlElement(namespace = "urn:hl7-org:sdtc")
     public final RaceCode raceCode;
 
-    public Patient(Name name, RaceCode raceCode){
+    @XmlElement
+    public final GenderCode genderCode;
+
+    public Patient(Name name, RaceCode raceCode, GenderCode gendercode){
         this.name = name;
         this.raceCode = raceCode;
+        this.genderCode = gendercode;
     }
 }

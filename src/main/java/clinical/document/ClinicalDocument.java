@@ -42,4 +42,5 @@ public abstract class ClinicalDocument {
   public void setPatientTelecom(Telecom telecom) {
     this.recordTarget.patientRole.telecom = telecom;
   }
+
 }

@@ -2,6 +2,7 @@ package clinical.document.ccd;
 
 import clinical.document.header.*;
 import clinical.document.header.PatientId;
+import clinical.document.shared.GenderCode;
 import clinical.document.shared.Telecom;
 
 import java.time.LocalDate;
@@ -12,8 +13,10 @@ public class CCDGenerator {
         CCD ccd = new CCD();
         ccd.setPatient(new Patient(
                 new Name("Eve", "Betterhalf", "SP"),
-                RaceCodes.HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER
+                RaceCodes.HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER,
+                new GenderCode("F", "Female")
                 ));
+
         ccd.setPatientId(new PatientId("444222222"));
         ccd.setPatientAddress(new Address("HP", "2222 Home Street", "Beaverton", "OR", "97867"));
         ccd.setPatientTelecom(new Telecom("HP", "tel:+1(555)555-2003"));
