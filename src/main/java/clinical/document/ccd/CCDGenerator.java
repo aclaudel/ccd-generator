@@ -12,11 +12,13 @@ public class CCDGenerator {
 
     public CCD getCcd() {
         CCD ccd = new CCD();
+
         ccd.setPatient(new Patient(
                 new Name("Eve", "Betterhalf", "SP"),
                 RaceCodes.HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER,
                 new GenderCode("F", "Female"),
-                new DocumentTime(LocalDate.of(1975,5,1))
+                new DocumentTime(LocalDate.of(1975,5,1)),
+                new MaritalStatusCode("M", "Married")
                 ));
 
         ccd.setPatientId(new PatientId("444222222"));

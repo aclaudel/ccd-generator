@@ -19,10 +19,14 @@ public class Patient {
     @XmlElement
     public final DocumentTime birthTime;
 
-    public Patient(Name name, RaceCode raceCode, GenderCode gendercode, DocumentTime birthTime){
+    @XmlElement
+    public final MaritalStatusCode maritalStatusCode;
+
+    public Patient(Name name, RaceCode raceCode, GenderCode gendercode, DocumentTime birthTime, MaritalStatusCode maritalStatusCode){
         this.name = name;
         this.raceCode = raceCode;
         this.genderCode = gendercode;
         this.birthTime = birthTime;
+        this.maritalStatusCode = maritalStatusCode;
     }
 }
