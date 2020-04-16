@@ -1,5 +1,7 @@
 package clinical.document.header;
 
+import clinical.document.shared.Telecom;
+
 import javax.xml.bind.annotation.XmlElement;
 
 public class PatientRole {
@@ -11,6 +13,9 @@ public class PatientRole {
 
     @XmlElement
     public Patient patient;
+
+    @XmlElement
+    public Telecom telecom;
 
     public void setPatientId(PatientId patientId) {
         this.patientId = patientId;

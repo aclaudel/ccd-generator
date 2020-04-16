@@ -2,6 +2,7 @@ package clinical.document;
 
 import clinical.document.header.*;
 import clinical.document.header.PatientId;
+import clinical.document.shared.Telecom;
 
 import javax.xml.bind.annotation.XmlElement;
 import java.util.ArrayList;
@@ -37,5 +38,9 @@ public abstract class ClinicalDocument {
 
   public void setPatientId(PatientId patientId) {
     this.recordTarget.patientRole.patientId = patientId;
+  }
+
+  public void setPatientTelecom(Telecom telecom) {
+    this.recordTarget.patientRole.telecom = telecom;
   }
 }
