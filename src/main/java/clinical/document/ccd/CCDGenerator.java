@@ -12,7 +12,7 @@ public class CCDGenerator {
         CCD ccd = new CCD();
         ccd.setPatient(new Patient(
                 new Name("Eve", "Betterhalf", "SP"),
-                RaceCodes.HawaiianOrOtherPacificIslander
+                RaceCodes.HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER
                 ));
         ccd.setPatientId(new PatientId("444222222"));
         ccd.setPatientAddress(new Address("HP", "2222 Home Street", "Beaverton", "OR", "97867"));

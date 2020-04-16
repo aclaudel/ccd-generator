@@ -22,7 +22,6 @@ public abstract class ClinicalDocument {
   @XmlElement
   public final RecordTarget recordTarget = new RecordTarget();
 
-
   public ClinicalDocument(){
     templateIds.add(new TemplateId("2.16.840.1.113883.10.20.22.1", "2015-08-01"));
   }
