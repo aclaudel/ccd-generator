@@ -2,9 +2,7 @@ package clinical.document.ccd;
 
 import clinical.document.header.*;
 import clinical.document.header.PatientId;
-import clinical.document.shared.DocumentTime;
-import clinical.document.shared.GenderCode;
-import clinical.document.shared.Telecom;
+import clinical.document.shared.*;
 
 import java.time.LocalDate;
 
@@ -18,7 +16,9 @@ public class CCDGenerator {
                 RaceCodes.HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER,
                 new GenderCode("F", "Female"),
                 new DocumentTime(LocalDate.of(1975,5,1)),
-                new MaritalStatusCode("M", "Married")
+                new MaritalStatusCode("M", "Married"),
+                new ReligiousAffiliationCode("1013", "Christian (non-Catholic, non-specific)"),
+                new EthnicGroup("2186-5", "Not Hispanic or Latino")
                 ));
 
         ccd.setPatientId(new PatientId("444222222"));
