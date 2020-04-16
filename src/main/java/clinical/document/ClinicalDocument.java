@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 
 public abstract class ClinicalDocument {
-
+  public static final TemplateId ClinicalDocumentTemplateId = new TemplateId("2.16.840.1.113883.10.20.22.1", "2015-08-01");
   @XmlElement
   public final USRealmCode realmCode = new USRealmCode();
 
@@ -23,7 +23,7 @@ public abstract class ClinicalDocument {
   public final RecordTarget recordTarget = new RecordTarget();
 
   public ClinicalDocument(){
-    templateIds.add(new TemplateId("2.16.840.1.113883.10.20.22.1", "2015-08-01"));
+    templateIds.add(ClinicalDocumentTemplateId);
   }
 
   public void setPatient(Patient patient){
