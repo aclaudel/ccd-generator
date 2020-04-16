@@ -1,4 +1,4 @@
-package clinical.document.ccd;
+package clinical.document.shared;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import java.time.LocalDate;

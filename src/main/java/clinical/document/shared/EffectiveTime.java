@@ -1,4 +1,6 @@
-package clinical.document.ccd;
+package clinical.document.shared;
+
+import clinical.document.shared.DocumentTime;
 
 import javax.xml.bind.annotation.XmlElement;
 

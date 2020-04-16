@@ -2,11 +2,11 @@ package clinical.document.ccd;
 
 import clinical.document.ClinicalDocument;
 import clinical.document.header.TemplateId;
+import clinical.document.shared.DocumentTime;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 @XmlRootElement(name = "ClinicalDocument")
 public class CCD extends ClinicalDocument {

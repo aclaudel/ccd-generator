@@ -1,11 +1,9 @@
 package clinical.document;
 
-import clinical.document.ccd.CCD;
 import clinical.document.header.*;
+import clinical.document.header.PatientId;
 
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSeeAlso;
 import java.util.ArrayList;
 
 
@@ -35,5 +33,9 @@ public abstract class ClinicalDocument {
   public void setPatientAddress(Address address)
   {
     this.recordTarget.patientRole.address = address;
+  }
+
+  public void setPatientId(PatientId patientId) {
+    this.recordTarget.patientRole.patientId = patientId;
   }
 }
