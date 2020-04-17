@@ -4,12 +4,16 @@ import javax.xml.bind.annotation.XmlAttribute;
 
 public class Telecom {
     @XmlAttribute
+    public final String value;
+    @XmlAttribute
     public final String use;
-    @XmlAttribute(name = "value")
-    public final String number;
 
-    public Telecom(String use, String number) {
+    public Telecom(String use, String value) {
         this.use = use;
-        this.number = number;
+        this.value = value;
+    }
+
+    public Telecom(String value) {
+        this(null, value);
     }
 }

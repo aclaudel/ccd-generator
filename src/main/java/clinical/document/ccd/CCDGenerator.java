@@ -5,11 +5,7 @@ import clinical.document.header.PatientId;
 import clinical.document.shared.*;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class CCDGenerator {
 
@@ -28,7 +24,11 @@ public class CCDGenerator {
 
         ccd.setPatientId(new PatientId("444222222"));
         ccd.setPatientAddress(new Address("HP", "2222 Home Street", "Beaverton", "OR", "97867"));
-        ccd.setPatientTelecom(new Telecom("HP", "tel:+1(555)555-2003"));
+        ccd.setPatientTelecoms(Arrays.asList(
+                new Telecom("HP", "tel:+1(555)555-2003"),
+                new Telecom("MC", "tel:508-259-5882"),
+                new Telecom("mailto:hassan.burawi@eclinicalworks.com")
+        ));
 
         return ccd;
     }

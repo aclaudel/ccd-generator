@@ -6,6 +6,7 @@ import clinical.document.shared.Telecom;
 
 import javax.xml.bind.annotation.XmlElement;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public abstract class ClinicalDocument {
@@ -39,8 +40,8 @@ public abstract class ClinicalDocument {
     this.recordTarget.patientRole.patientId = patientId;
   }
 
-  public void setPatientTelecom(Telecom telecom) {
-    this.recordTarget.patientRole.telecom = telecom;
+  public void setPatientTelecoms(List<Telecom> telecoms) {
+    this.recordTarget.patientRole.telecoms = telecoms;
   }
 
 }
