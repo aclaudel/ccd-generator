@@ -23,7 +23,7 @@ public class CCDGenerator {
                 new LanguageCode("en")));
 
         ccd.setPatientId(new PatientId("444222222"));
-        ccd.setPatientAddress(new Address("HP", "2222 Home Street", "Beaverton", "OR", "97867"));
+        ccd.setPatientAddress(new Address("HP", "123 Author Drive", "Suite 200","Beaverton", "OR", "97867"));
         ccd.setPatientTelecoms(Arrays.asList(
                 new Telecom("HP", "tel:+1(555)555-2003"),
                 new Telecom("MC", "tel:508-259-5882"),

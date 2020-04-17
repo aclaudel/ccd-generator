@@ -9,24 +9,23 @@ public class Address {
     public final String use;
 
     @XmlElement
-    public final String streetAddressLine;
-
-    @XmlElement
     public final String city;
-
+    @XmlElement(name = "streetAddressLine")
+    public final String streetAddressLine1;
+    @XmlElement(name = "streetAddressLine")
+    public final String streetAddressLine2;
     @XmlElement
     public final String state;
-
+    @XmlElement
+    public final String country = "US";
     @XmlElement
     public final String postalCode;
 
-    @XmlElement
-    public final String country = "US";
-
-    public Address(String use, String streetAddressLine, String city, String state, String postalCode){
-
+    public Address(String use, String streetAddressLine1, String streetAddressLine2,
+                   String city, String state, String postalCode){
         this.use = use;
-        this.streetAddressLine = streetAddressLine;
+        this.streetAddressLine1 = streetAddressLine1;
+        this.streetAddressLine2 = streetAddressLine2;
         this.city = city;
         this.state = state;
         this.postalCode = postalCode;
