@@ -5,6 +5,10 @@ import clinical.document.header.PatientId;
 import clinical.document.shared.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class CCDGenerator {
 
@@ -13,13 +17,15 @@ public class CCDGenerator {
 
         ccd.setPatient(new Patient(
                 new Name("Eve", "Betterhalf", "SP"),
-                RaceCodes.HAWAIIAN_OR_OTHER_PACIFIC_ISLANDER,
-                new GenderCode("F", "Female"),
+                new GenderCode("F"),
                 new DocumentTime(LocalDate.of(1975,5,1)),
-                new MaritalStatusCode("M", "Married"),
-                new ReligiousAffiliationCode("1013", "Christian (non-Catholic, non-specific)"),
-                new EthnicGroup("2186-5", "Not Hispanic or Latino")
-                ));
+                Stream.of(
+                        RaceCodes.AMERICAN_INDIAN_OR_ALASKA_NATIVE
+                ).collect(Collectors.toList()),
+                Stream.of(
+                        new EthnicGroup("2186-5", "Not Hispanic or Latino")
+                ).collect(Collectors.toList()),
+                new LanguageCode("en")));
 
         ccd.setPatientId(new PatientId("444222222"));
         ccd.setPatientAddress(new Address("HP", "2222 Home Street", "Beaverton", "OR", "97867"));

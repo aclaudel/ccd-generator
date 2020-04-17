@@ -6,22 +6,15 @@ public class GenderCode {
     @XmlAttribute
     public final String code;
     @XmlAttribute
-    public final String name;
-    @XmlAttribute
     public final String codeSystem = "2.16.840.1.113883.5.1";
     @XmlAttribute
     public final String codeSystemName = "AdministrativeGender";
 
-    public GenderCode(String code, String name) {
+    public GenderCode(String code) {
         this.code = code;
-        this.name = name;
     }
 
     public String getCode() {
         return code;
-    }
-
-    public String getName() {
-        return name;
     }
 }
