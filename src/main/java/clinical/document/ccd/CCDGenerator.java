@@ -18,9 +18,9 @@ public class CCDGenerator {
 
         // TODO
         ccd.setIds(
-                new PatientId("2.16.840.1.113883.4.391.313855", "9295", "Test- Hassan Burawi MYSQL V11"),
-                new PatientId("2.16.840.1.113883.4.391.313855.1", "9295", "Test- Hassan Burawi MYSQL V11 ACC NO"),
-                new MedicareId("2.16.840.1.113883.4.572", "123456789", "HCID")
+                new PatientId("2.16.840.1.113883.4.391.313855", patientModel.id, "Test- Hassan Burawi MYSQL V11"),
+                new PatientId("2.16.840.1.113883.4.391.313855.1", patientModel.id, "Test- Hassan Burawi MYSQL V11 ACC NO"),
+                new MedicareId("2.16.840.1.113883.4.572", patientModel.medicareId, "HCID")
         );
 
         PersonModel nokModel = new PersonModel("Dick", "Derrick");
