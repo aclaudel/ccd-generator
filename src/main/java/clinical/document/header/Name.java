@@ -2,19 +2,27 @@ package clinical.document.header;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import java.util.Arrays;
+import java.util.List;
 
 public class Name {
 
-    @XmlAttribute
-    public final String use = "L";
-    @XmlElement
-    public final String given;
+    @XmlElement(name = "given")
+    public final List<String> givens;
 
     @XmlElement
     public final Family family;
 
-    public Name(String given, String family, String qualifier) {
-        this.given = given;
-        this.family = new Family(family, qualifier);
+    @XmlElement
+    public final String prefix;
+
+    @XmlElement
+    public final String suffix;
+
+    public Name(String prefix, String family, String suffix, String... givens) {
+        this.prefix = prefix;
+        this.family = new Family(family);
+        this.suffix = suffix;
+        this.givens = Arrays.asList(givens);
     }
 }

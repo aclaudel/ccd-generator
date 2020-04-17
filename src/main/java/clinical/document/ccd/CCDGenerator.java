@@ -13,7 +13,7 @@ public class CCDGenerator {
         CCD ccd = new CCD();
 
         ccd.setPatient(new Patient(
-                new Name("Eve", "Betterhalf", "SP"),
+                new Name("Mr", "Newman", "III", "Christopher", "Frank"),
                 new GenderCode("F"),
                 new DocumentTime(LocalDate.of(1975,5,1)),
                 RaceCodes.AMERICAN_INDIAN_OR_ALASKA_NATIVE,

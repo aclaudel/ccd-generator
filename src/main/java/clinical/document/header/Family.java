@@ -15,4 +15,8 @@ public class Family {
         this.family = familyName;
         this.qualifier = qualifier;
     }
+
+    public Family(String family) {
+        this(family, null);
+    }
 }
