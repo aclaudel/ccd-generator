@@ -22,8 +22,6 @@ public class CCDGenerator {
                 new MedicareId("2.16.840.1.113883.4.572", "123456789", "HCID")
         );
 
-        ccd.setPatientAddress(new Address("HP", "123 Author Drive", "Suite 200","Beaverton", "OR", "97867"));
-
 
         ccd.setNok(new Name("Dick", "Derrick"));
         ccd.addGuarantor(

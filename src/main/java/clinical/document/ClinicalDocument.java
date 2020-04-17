@@ -40,12 +40,9 @@ public abstract class ClinicalDocument {
             new Telecom("MC", patientModel.mobilePhone),
             new Telecom(patientModel.email)
     );
+    this.recordTarget.patientRole.address = new Address("HP", patientModel.address);
   }
 
-  public void setPatientAddress(Address address)
-  {
-    this.recordTarget.patientRole.address = address;
-  }
 
   public void setIds(PatientId patientId, PatientId patientId1, MedicareId medicareId) {
     this.recordTarget.patientRole.patientIds = asList(patientId, patientId1);

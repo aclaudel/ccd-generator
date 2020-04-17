@@ -1,5 +1,7 @@
 package clinical.document.header;
 
+import clinical.document.model.AddressModel;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 
@@ -33,5 +35,10 @@ public class Address {
 
     public Address(String streetAddressLine, String city, String state, String postalCode) {
         this(null, streetAddressLine, null, city, state, postalCode);
+    }
+
+    public Address(String use, AddressModel addressModel) {
+        this(use, addressModel.streetAddress1, addressModel.streetAddress2,
+                addressModel.city, addressModel.state, addressModel.postalCode);
     }
 }

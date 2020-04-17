@@ -19,4 +19,5 @@ public class PatientModel {
     public final String homePhone = "tel:+1(555)555-2003";
     public final String mobilePhone = "tel:508-259-5882";
     public final String email = "mailto:hassan.burawi@eclinicalworks.com";
+    public AddressModel address = new AddressModel("123 Author Drive", "Suite 200","Beaverton", "OR", "97867");
 }
