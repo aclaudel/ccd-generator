@@ -11,7 +11,6 @@ public class CCDGenerator {
 
     public CCD getCcd() {
         CCD ccd = new CCD();
-
         PatientModel patientModel = new PatientModel();
 
         ccd.setPatient(patientModel);
