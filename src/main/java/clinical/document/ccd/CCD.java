@@ -11,17 +11,10 @@ import java.time.LocalDate;
 @XmlRootElement(name = "ClinicalDocument")
 public class CCD extends ClinicalDocument {
     private static final TemplateId ContinuityOfCareTemplateId = new TemplateId("2.16.840.1.113883.10.20.22.1.2", "2015-08-01");
-    @XmlElement
-    public final DocumentationOf documentationOf = new DocumentationOf();
 
     public CCD(){
         super();
         templateIds.add(ContinuityOfCareTemplateId);
-    }
-
-    public void setEffectiveTime(LocalDate start, LocalDate end){
-        this.documentationOf.serviceEvent.effectiveTime.low = new DocumentTime(start);
-        this.documentationOf.serviceEvent.effectiveTime.high = new DocumentTime(end);
     }
 
 }
