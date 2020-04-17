@@ -54,7 +54,10 @@ public abstract class ClinicalDocument {
     this.participants.add(new NextOfKin(new Name(nokModel.given, nokModel.family)));
   }
 
-  public void addGuarantor(Name name, Telecom telecom, Address address) {
-    this.participants.add(new Guarantor(name, telecom, address));
+  public void addGuarantor(PersonModel guarantorModel) {
+    this.participants.add(new Guarantor(
+            new Name(guarantorModel.given, guarantorModel.family),
+            new Telecom(guarantorModel.phone),
+            new Address(guarantorModel.address)));
   }
 }

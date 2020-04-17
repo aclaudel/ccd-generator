@@ -16,4 +16,9 @@ public class AddressModel {
         this.state = state;
         this.postalCode = postalCode;
     }
+
+    public AddressModel(String streetAddress1,
+                        String city, String state, String postalCode) {
+        this(streetAddress1, null, city, state, postalCode);
+    }
 }

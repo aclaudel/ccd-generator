@@ -41,4 +41,8 @@ public class Address {
         this(use, addressModel.streetAddress1, addressModel.streetAddress2,
                 addressModel.city, addressModel.state, addressModel.postalCode);
     }
+
+    public Address(AddressModel addressModel) {
+        this(null, addressModel);
+    }
 }
