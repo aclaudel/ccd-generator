@@ -3,6 +3,7 @@ package clinical.document.ccd;
 import clinical.document.header.*;
 import clinical.document.header.PatientId;
 import clinical.document.model.AddressModel;
+import clinical.document.model.CareTeamModel;
 import clinical.document.model.PatientModel;
 import clinical.document.model.PersonModel;
 import clinical.document.shared.*;
@@ -23,16 +24,15 @@ public class CCDGenerator {
         );
 
         PersonModel nokModel = new PersonModel("Dick", "Derrick");
-        ccd.setNok(nokModel);
-
         PersonModel guarantorModel = new PersonModel(
                 "Mary", "Jones", "tel:555-555-5555",
                 new AddressModel("10 Main St",
                         "Boca Raton",
                         "FL",
                         "33432"));
+        CareTeamModel careTeamModel = new CareTeamModel(nokModel, guarantorModel);
 
-        ccd.addGuarantor(guarantorModel);
+        ccd.setCareTeam(careTeamModel);
 
         return ccd;
     }

@@ -2,6 +2,7 @@ package clinical.document;
 
 import clinical.document.header.*;
 import clinical.document.header.PatientId;
+import clinical.document.model.CareTeamModel;
 import clinical.document.model.PatientModel;
 import clinical.document.model.PersonModel;
 import clinical.document.shared.Telecom;
@@ -59,5 +60,10 @@ public abstract class ClinicalDocument {
             new Name(guarantorModel.given, guarantorModel.family),
             new Telecom(guarantorModel.phone),
             new Address(guarantorModel.address)));
+  }
+
+  public void setCareTeam(CareTeamModel careTeamModel) {
+    setNok(careTeamModel.nok);
+    addGuarantor(careTeamModel.guarantor);
   }
 }
