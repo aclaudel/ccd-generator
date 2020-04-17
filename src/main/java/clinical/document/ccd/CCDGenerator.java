@@ -2,35 +2,34 @@ package clinical.document.ccd;
 
 import clinical.document.header.*;
 import clinical.document.header.PatientId;
-import clinical.document.model.AddressModel;
-import clinical.document.model.CareTeamModel;
-import clinical.document.model.PatientModel;
-import clinical.document.model.PersonModel;
-import clinical.document.shared.*;
+import clinical.document.model.*;
 
 public class CCDGenerator {
 
+    private static final PatientModel patientModel = new PatientModel();
+    private static final PersonModel nokModel = new PersonModel("Dick", "Derrick");
+    private static final PersonModel guarantorModel = new PersonModel(
+            "Mary", "Jones", "tel:555-555-5555",
+            new AddressModel("10 Main St",
+                    "Boca Raton",
+                    "FL",
+                    "33432"));
+    private static final CareTeamModel careTeamModel = new CareTeamModel(nokModel, guarantorModel);
+
+    private static final LocalEMRConfig config = new LocalEMRConfig();
+
+
     public CCD getCcd() {
         CCD ccd = new CCD();
-        PatientModel patientModel = new PatientModel();
 
         ccd.setPatient(patientModel);
 
         // TODO
         ccd.setIds(
-                new PatientId("2.16.840.1.113883.4.391.313855", patientModel.id, "Test- Hassan Burawi MYSQL V11"),
-                new PatientId("2.16.840.1.113883.4.391.313855.1", patientModel.id, "Test- Hassan Burawi MYSQL V11 ACC NO"),
+                new PatientId(config.rootId1, patientModel.id, config.assigningAuthority1),
+                new PatientId(config.rootId2, patientModel.id, config.assigningAuthority2),
                 new MedicareId("2.16.840.1.113883.4.572", patientModel.medicareId, "HCID")
         );
-
-        PersonModel nokModel = new PersonModel("Dick", "Derrick");
-        PersonModel guarantorModel = new PersonModel(
-                "Mary", "Jones", "tel:555-555-5555",
-                new AddressModel("10 Main St",
-                        "Boca Raton",
-                        "FL",
-                        "33432"));
-        CareTeamModel careTeamModel = new CareTeamModel(nokModel, guarantorModel);
 
         ccd.setCareTeam(careTeamModel);
 
