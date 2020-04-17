@@ -24,6 +24,8 @@ public abstract class ClinicalDocument {
 
   @XmlElement
   public final RecordTarget recordTarget = new RecordTarget();
+  @XmlElement(name = "participant")
+  public final List<NextOfKin> participants = new ArrayList<>();
 
   public ClinicalDocument(){
     templateIds.add(ClinicalDocumentTemplateId);
@@ -45,5 +47,9 @@ public abstract class ClinicalDocument {
   public void setIds(PatientId patientId, PatientId patientId1, MedicareId medicareId) {
     this.recordTarget.patientRole.patientIds = asList(patientId, patientId1);
     this.recordTarget.patientRole.medicareId = medicareId;
+  }
+
+  public void setNok(Name name) {
+    this.participants.add(new NextOfKin(name));
   }
 }

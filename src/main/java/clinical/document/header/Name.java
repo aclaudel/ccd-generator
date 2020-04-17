@@ -25,4 +25,8 @@ public class Name {
         this.suffix = suffix;
         this.givens = Arrays.asList(givens);
     }
+
+    public Name(String given, String family) {
+        this(null, family, null, given);
+    }
 }
