@@ -30,4 +30,8 @@ public class Address {
         this.state = state;
         this.postalCode = postalCode;
     }
+
+    public Address(String streetAddressLine, String city, String state, String postalCode) {
+        this(null, streetAddressLine, null, city, state, postalCode);
+    }
 }

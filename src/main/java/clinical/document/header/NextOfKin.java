@@ -11,7 +11,11 @@ public class NextOfKin {
     @XmlElement
     public final AssociatedEntity associatedEntity;
 
+    public NextOfKin(AssociatedEntity associatedEntity) {
+        this.associatedEntity = associatedEntity;
+    }
+
     public NextOfKin(Name name) {
-        this.associatedEntity = new AssociatedEntity("NOK", name);
+        this(new AssociatedEntity("NOK", name));
     }
 }

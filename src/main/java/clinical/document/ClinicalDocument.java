@@ -52,4 +52,8 @@ public abstract class ClinicalDocument {
   public void setNok(Name name) {
     this.participants.add(new NextOfKin(name));
   }
+
+  public void addGuarantor(Name name, Telecom telecom, Address address) {
+    this.participants.add(new Guarantor(name, telecom, address));
+  }
 }

@@ -36,6 +36,16 @@ public class CCDGenerator {
         ));
 
         ccd.setNok(new Name("Dick", "Derrick"));
+        ccd.addGuarantor(
+                new Name("Mary", "Jones"),
+                new Telecom("tel:555-555-5555"),
+                new Address(
+                        "10 Main St",
+                        "Boca Raton",
+                        "FL",
+                        "33432"
+                )
+        );
 
         return ccd;
     }
