@@ -22,7 +22,11 @@ public class CCDGenerator {
                 Arrays.asList(new EthnicGroup("2144-4", "Valencian")),
                 new LanguageCode("en")));
 
-        ccd.setPatientId(new PatientId("444222222"));
+        ccd.setIds(
+                new PatientId("2.16.840.1.113883.4.391.313855", "9295", "Test- Hassan Burawi MYSQL V11"),
+                new PatientId("2.16.840.1.113883.4.391.313855.1", "9295", "Test- Hassan Burawi MYSQL V11 ACC NO"),
+                new MedicareId("2.16.840.1.113883.4.572", "123456789", "HCID")
+        );
         ccd.setPatientAddress(new Address("HP", "123 Author Drive", "Suite 200","Beaverton", "OR", "97867"));
         ccd.setPatientTelecoms(Arrays.asList(
                 new Telecom("HP", "tel:+1(555)555-2003"),

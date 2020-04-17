@@ -8,6 +8,8 @@ import javax.xml.bind.annotation.XmlElement;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.util.Arrays.asList;
+
 
 public abstract class ClinicalDocument {
   public static final TemplateId ClinicalDocumentTemplateId = new TemplateId("2.16.840.1.113883.10.20.22.1", "2015-08-01");
@@ -36,12 +38,12 @@ public abstract class ClinicalDocument {
     this.recordTarget.patientRole.address = address;
   }
 
-  public void setPatientId(PatientId patientId) {
-    this.recordTarget.patientRole.patientId = patientId;
-  }
-
   public void setPatientTelecoms(List<Telecom> telecoms) {
     this.recordTarget.patientRole.telecoms = telecoms;
   }
 
+  public void setIds(PatientId patientId, PatientId patientId1, MedicareId medicareId) {
+    this.recordTarget.patientRole.patientIds = asList(patientId, patientId1);
+    this.recordTarget.patientRole.medicareId = medicareId;
+  }
 }
