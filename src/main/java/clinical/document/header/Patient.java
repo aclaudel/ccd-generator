@@ -24,26 +24,34 @@ public class Patient {
     @XmlElement
     public ReligiousAffiliationCode religiousAffiliationCode;
 
+    @XmlElement(name = "raceCode")
+    public final RaceCode raceCode;
+
     @XmlElement(namespace = "urn:hl7-org:sdtc", name = "raceCode")
     public final List<RaceCode> raceCodes;
 
     @XmlElement(name="ethnicGroupCode")
+    public final EthnicGroup ethnicGroupCode;
+    @XmlElement(namespace = "urn:hl7-org:sdtc", name="ethnicGroupCode")
     public final List<EthnicGroup> ethnicGroupCodes;
 
     @XmlElement
     private final LanguageCommunication languageCommunication;
 
-
     public Patient(Name name,
                    GenderCode gendercode,
                    DocumentTime birthTime,
+                   RaceCode raceCode,
                    List<RaceCode> raceCodes,
+                   EthnicGroup ethnicGroup,
                    List<EthnicGroup> ethnicGroupCodes,
                    LanguageCode language){
         this.name = name;
+        this.raceCode = raceCode;
         this.raceCodes = raceCodes;
         this.genderCode = gendercode;
         this.birthTime = birthTime;
+        this.ethnicGroupCode = ethnicGroup;
         this.ethnicGroupCodes = ethnicGroupCodes;
         this.languageCommunication = new LanguageCommunication(language);
     }
