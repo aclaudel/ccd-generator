@@ -4,7 +4,6 @@ import clinical.document.header.*;
 import clinical.document.header.PatientId;
 import clinical.document.model.CareTeamModel;
 import clinical.document.model.PatientModel;
-import clinical.document.model.PersonModel;
 import clinical.document.shared.Telecom;
 
 import javax.xml.bind.annotation.XmlElement;
@@ -51,19 +50,11 @@ public abstract class ClinicalDocument {
     this.recordTarget.patientRole.medicareId = medicareId;
   }
 
-  public void setNok(PersonModel nokModel) {
-    this.participants.add(new NextOfKin(new Name(nokModel.given, nokModel.family)));
-  }
-
-  public void addGuarantor(PersonModel guarantorModel) {
-    this.participants.add(new Guarantor(
-            new Name(guarantorModel.given, guarantorModel.family),
-            new Telecom(guarantorModel.phone),
-            new Address(guarantorModel.address)));
-  }
-
   public void setCareTeam(CareTeamModel careTeamModel) {
-    setNok(careTeamModel.nok);
-    addGuarantor(careTeamModel.guarantor);
+    this.participants.add(new NextOfKin(new Name(careTeamModel.nok.given, careTeamModel.nok.family)));
+    this.participants.add(new Guarantor(
+            new Name(careTeamModel.guarantor.given, careTeamModel.guarantor.family),
+            new Telecom(careTeamModel.guarantor.phone),
+            new Address(careTeamModel.guarantor.address)));
   }
 }
