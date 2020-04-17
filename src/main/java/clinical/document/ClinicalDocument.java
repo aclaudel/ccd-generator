@@ -3,6 +3,7 @@ package clinical.document;
 import clinical.document.header.*;
 import clinical.document.header.PatientId;
 import clinical.document.model.PatientModel;
+import clinical.document.model.PersonModel;
 import clinical.document.shared.Telecom;
 
 import javax.xml.bind.annotation.XmlElement;
@@ -49,8 +50,8 @@ public abstract class ClinicalDocument {
     this.recordTarget.patientRole.medicareId = medicareId;
   }
 
-  public void setNok(Name name) {
-    this.participants.add(new NextOfKin(name));
+  public void setNok(PersonModel nokModel) {
+    this.participants.add(new NextOfKin(new Name(nokModel.given, nokModel.family)));
   }
 
   public void addGuarantor(Name name, Telecom telecom, Address address) {

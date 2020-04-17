@@ -3,9 +3,8 @@ package clinical.document.ccd;
 import clinical.document.header.*;
 import clinical.document.header.PatientId;
 import clinical.document.model.PatientModel;
+import clinical.document.model.PersonModel;
 import clinical.document.shared.*;
-
-import java.util.Arrays;
 
 public class CCDGenerator {
 
@@ -22,8 +21,10 @@ public class CCDGenerator {
                 new MedicareId("2.16.840.1.113883.4.572", "123456789", "HCID")
         );
 
+        PersonModel nokModel = new PersonModel("Dick", "Derrick");
+        ccd.setNok(nokModel);
 
-        ccd.setNok(new Name("Dick", "Derrick"));
+        PersonModel guarantorModel = new PersonModel("Dick", "Derrick");
         ccd.addGuarantor(
                 new Name("Mary", "Jones"),
                 new Telecom("tel:555-555-5555"),
