@@ -7,6 +7,7 @@ import clinical.document.shared.Telecom;
 
 import javax.xml.bind.annotation.XmlElement;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static java.util.Arrays.asList;
@@ -34,15 +35,16 @@ public abstract class ClinicalDocument {
 
   public void setPatient(PatientModel patientModel){
     this.recordTarget.patientRole.patient = new Patient(patientModel);
+    this.recordTarget.patientRole.telecoms = Arrays.asList(
+            new Telecom("HP", patientModel.homePhone),
+            new Telecom("MC", patientModel.mobilePhone),
+            new Telecom(patientModel.email)
+    );
   }
 
   public void setPatientAddress(Address address)
   {
     this.recordTarget.patientRole.address = address;
-  }
-
-  public void setPatientTelecoms(List<Telecom> telecoms) {
-    this.recordTarget.patientRole.telecoms = telecoms;
   }
 
   public void setIds(PatientId patientId, PatientId patientId1, MedicareId medicareId) {

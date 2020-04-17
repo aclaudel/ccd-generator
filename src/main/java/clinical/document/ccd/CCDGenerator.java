@@ -15,6 +15,7 @@ public class CCDGenerator {
 
         ccd.setPatient(patientModel);
 
+        // TODO
         ccd.setIds(
                 new PatientId("2.16.840.1.113883.4.391.313855", "9295", "Test- Hassan Burawi MYSQL V11"),
                 new PatientId("2.16.840.1.113883.4.391.313855.1", "9295", "Test- Hassan Burawi MYSQL V11 ACC NO"),
@@ -22,13 +23,6 @@ public class CCDGenerator {
         );
 
         ccd.setPatientAddress(new Address("HP", "123 Author Drive", "Suite 200","Beaverton", "OR", "97867"));
-        ccd.setPatientTelecoms(Arrays.asList(
-                new Telecom("HP", "tel:+1(555)555-2003"),
-                new Telecom("MC", "tel:508-259-5882"),
-                new Telecom("mailto:hassan.burawi@eclinicalworks.com")
-        ));
-
-
 
 
         ccd.setNok(new Name("Dick", "Derrick"));

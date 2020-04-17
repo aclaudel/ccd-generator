@@ -16,4 +16,7 @@ public class PatientModel {
     public final List<RaceModel> additionalRaces = Arrays.asList(new RaceModel("1010-8", "Apache"));
     public final EthnicGroupModel ethnicGroup = new EthnicGroupModel("2135-2", "Hispanic or Latino");
     public final List<EthnicGroupModel> additionalEthnicGroups = Arrays.asList(new EthnicGroupModel("2144-4", "Valencian"));
+    public final String homePhone = "tel:+1(555)555-2003";
+    public final String mobilePhone = "tel:508-259-5882";
+    public final String email = "mailto:hassan.burawi@eclinicalworks.com";
 }
