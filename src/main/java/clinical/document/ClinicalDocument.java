@@ -25,7 +25,7 @@ public abstract class ClinicalDocument {
   @XmlElement
   public final RecordTarget recordTarget = new RecordTarget();
   @XmlElement(name = "participant")
-  public final List<NextOfKin> participants = new ArrayList<>();
+  public final List<Participant> participants = new ArrayList<>();
 
   public ClinicalDocument(){
     templateIds.add(ClinicalDocumentTemplateId);
