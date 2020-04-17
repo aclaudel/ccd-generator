@@ -1,5 +1,7 @@
 package clinical.document.header;
 
+import clinical.document.model.RaceModel;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlType;
@@ -18,8 +20,12 @@ public class RaceCode {
     @XmlAttribute
     public final String codeSystemName = "Race &amp; Ethnicity - CDC";
 
-    RaceCode(String code, String displayName) {
+    public RaceCode(String code, String displayName) {
         this.code = code;
         this.displayName = displayName;
+    }
+
+    public RaceCode(RaceModel model) {
+        this(model.raceCode, model.raceDisplayName);
     }
 }

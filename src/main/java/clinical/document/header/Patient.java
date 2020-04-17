@@ -1,5 +1,6 @@
 package clinical.document.header;
 
+import clinical.document.model.PatientModel;
 import clinical.document.shared.DocumentTime;
 import clinical.document.shared.EthnicGroup;
 import clinical.document.shared.GenderCode;
@@ -7,6 +8,7 @@ import clinical.document.shared.ReligiousAffiliationCode;
 
 import javax.xml.bind.annotation.XmlElement;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Patient {
 
@@ -38,21 +40,18 @@ public class Patient {
     @XmlElement
     private final LanguageCommunication languageCommunication;
 
-    public Patient(Name name,
-                   GenderCode gendercode,
-                   DocumentTime birthTime,
-                   RaceCode raceCode,
-                   List<RaceCode> raceCodes,
-                   EthnicGroup ethnicGroup,
-                   List<EthnicGroup> ethnicGroupCodes,
-                   LanguageCode language){
-        this.name = name;
-        this.raceCode = raceCode;
-        this.raceCodes = raceCodes;
-        this.genderCode = gendercode;
-        this.birthTime = birthTime;
-        this.ethnicGroupCode = ethnicGroup;
-        this.ethnicGroupCodes = ethnicGroupCodes;
-        this.languageCommunication = new LanguageCommunication(language);
+    public Patient(PatientModel patientModel){
+        this.name = new Name(patientModel.prefix, patientModel.family, patientModel.suffix, patientModel.givens);
+        this.raceCode = new RaceCode(patientModel.race);
+        this.raceCodes = patientModel.additionalRaces.stream()
+                .map(RaceCode::new)
+                .collect(Collectors.toList());
+        this.genderCode = new GenderCode(patientModel.gender);
+        this.birthTime = new DocumentTime(patientModel.birthDate);
+        this.ethnicGroupCode = new EthnicGroup(patientModel.ethnicGroup);
+        this.ethnicGroupCodes = patientModel.additionalEthnicGroups.stream()
+                .map(EthnicGroup::new)
+                .collect(Collectors.toList());
+        this.languageCommunication = new LanguageCommunication(new LanguageCode(patientModel.language));
     }
 }

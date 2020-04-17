@@ -1,5 +1,7 @@
 package clinical.document.shared;
 
+import clinical.document.model.EthnicGroupModel;
+
 import javax.xml.bind.annotation.XmlAttribute;
 
 public class EthnicGroup {
@@ -15,5 +17,9 @@ public class EthnicGroup {
     public EthnicGroup(String code, String displayName) {
         this.code = code;
         this.displayName = displayName;
+    }
+
+    public EthnicGroup(EthnicGroupModel model) {
+        this(model.ethnicGroupCode, model.ethnicGroupDisplayName);
     }
 }

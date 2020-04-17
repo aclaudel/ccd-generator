@@ -2,6 +2,7 @@ package clinical.document;
 
 import clinical.document.header.*;
 import clinical.document.header.PatientId;
+import clinical.document.model.PatientModel;
 import clinical.document.shared.Telecom;
 
 import javax.xml.bind.annotation.XmlElement;
@@ -31,8 +32,8 @@ public abstract class ClinicalDocument {
     templateIds.add(ClinicalDocumentTemplateId);
   }
 
-  public void setPatient(Patient patient){
-    this.recordTarget.patientRole.patient = patient;
+  public void setPatient(PatientModel patientModel){
+    this.recordTarget.patientRole.patient = new Patient(patientModel);
   }
 
   public void setPatientAddress(Address address)
