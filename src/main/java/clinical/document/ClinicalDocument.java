@@ -1,19 +1,10 @@
 package clinical.document;
 
-import clinical.document.ccd.AddressBuilder;
 import clinical.document.header.*;
-import clinical.document.header.PatientId;
-import clinical.document.model.CareTeamModel;
-import clinical.document.model.PatientModel;
-import clinical.document.model.PersonModel;
-import clinical.document.shared.Telecom;
 
 import javax.xml.bind.annotation.XmlElement;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
-import static java.util.Arrays.asList;
 
 
 public abstract class ClinicalDocument {
