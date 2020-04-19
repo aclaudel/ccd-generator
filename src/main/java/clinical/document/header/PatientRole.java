@@ -4,6 +4,7 @@ import clinical.document.shared.Telecom;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import java.util.ArrayList;
 import java.util.List;
 
 import static java.util.Arrays.asList;
@@ -14,7 +15,7 @@ public class PatientRole {
     public final String classCode = "PAT";
 
     @XmlElement(name = "id")
-    public List<PatientId> patientIds;
+    public List<PatientId> patientIds = new ArrayList<>();
 
     @XmlElement(name = "id")
     public MedicareId medicareId;
@@ -26,9 +27,6 @@ public class PatientRole {
     public Patient patient;
 
     @XmlElement(name = "telecom")
-    public List<Telecom> telecoms;
+    public List<Telecom> telecoms = new ArrayList<>();
 
-    public void setPatientId(PatientId... patientIds) {
-        this.patientIds = asList(patientIds);
-    }
 }

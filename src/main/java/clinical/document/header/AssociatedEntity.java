@@ -8,29 +8,14 @@ import javax.xml.bind.annotation.XmlElement;
 public class AssociatedEntity {
 
     @XmlAttribute
-    public final String classCode;
+    public String classCode;
 
     @XmlElement
-    public final AssociatedPerson associatedPerson;
+    public AssociatedPerson associatedPerson;
 
     @XmlElement
-    public final Address address;
+    public Address address;
 
     @XmlElement
-    public final Telecom telecom;
-
-    public AssociatedEntity(String classCode, AssociatedPerson associatedPerson, Address address, Telecom telecom) {
-        this.classCode = classCode;
-        this.associatedPerson = associatedPerson;
-        this.address = address;
-        this.telecom = telecom;
-    }
-
-    public AssociatedEntity(String classCode, Name name) {
-        this(classCode, new AssociatedPerson(name), null, null);
-    }
-
-    public AssociatedEntity(String classCode, Name name, Telecom telecom, Address address) {
-        this(classCode, new AssociatedPerson(name), address, telecom);
-    }
+    public Telecom telecom;
 }

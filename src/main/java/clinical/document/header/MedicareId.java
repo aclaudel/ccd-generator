@@ -5,15 +5,10 @@ import javax.xml.bind.annotation.XmlElement;
 
 public class MedicareId {
     @XmlAttribute
-    public final String root;
+    public final String root = "2.16.840.1.113883.4.572";
     @XmlAttribute
-    public final String extension;
+    public String extension;
     @XmlAttribute
-    public final String assigningAuthorityName;
+    public final String assigningAuthorityName = "HCID";
 
-    public MedicareId(String root, String extension, String assigningAuthorityName) {
-        this.root = root;
-        this.extension = extension;
-        this.assigningAuthorityName = assigningAuthorityName;
-    }
 }

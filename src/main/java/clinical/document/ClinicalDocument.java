@@ -1,9 +1,11 @@
 package clinical.document;
 
+import clinical.document.ccd.AddressBuilder;
 import clinical.document.header.*;
 import clinical.document.header.PatientId;
 import clinical.document.model.CareTeamModel;
 import clinical.document.model.PatientModel;
+import clinical.document.model.PersonModel;
 import clinical.document.shared.Telecom;
 
 import javax.xml.bind.annotation.XmlElement;
@@ -26,7 +28,7 @@ public abstract class ClinicalDocument {
   public final ArrayList<TemplateId> templateIds = new ArrayList<>();
 
   @XmlElement
-  public final RecordTarget recordTarget = new RecordTarget();
+  public RecordTarget recordTarget = new RecordTarget();
   @XmlElement(name = "participant")
   public final List<Participant> participants = new ArrayList<>();
 
@@ -34,27 +36,7 @@ public abstract class ClinicalDocument {
     templateIds.add(ClinicalDocumentTemplateId);
   }
 
-  public void setPatient(PatientModel patientModel){
-    this.recordTarget.patientRole.patient = new Patient(patientModel);
-    this.recordTarget.patientRole.telecoms = Arrays.asList(
-            new Telecom("HP", patientModel.homePhone),
-            new Telecom("MC", patientModel.mobilePhone),
-            new Telecom(patientModel.email)
-    );
-    this.recordTarget.patientRole.address = new Address("HP", patientModel.address);
-  }
-
-
-  public void setIds(PatientId patientId, PatientId patientId1, MedicareId medicareId) {
-    this.recordTarget.patientRole.patientIds = asList(patientId, patientId1);
-    this.recordTarget.patientRole.medicareId = medicareId;
-  }
-
-  public void setCareTeam(CareTeamModel careTeamModel) {
-    this.participants.add(new NextOfKin(new Name(careTeamModel.nok.given, careTeamModel.nok.family)));
-    this.participants.add(new Guarantor(
-            new Name(careTeamModel.guarantor.given, careTeamModel.guarantor.family),
-            new Telecom(careTeamModel.guarantor.phone),
-            new Address(careTeamModel.guarantor.address)));
+  public void setParticipant(Participant participant) {
+    this.participants.add(participant);
   }
 }

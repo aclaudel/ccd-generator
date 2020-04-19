@@ -1,6 +1,8 @@
 package clinical.document.model;
 
 public class LocalEMRConfig {
+    //eCW operator id = 2.16.840.1.113883.4.391
+    //APU id = 313855
     public final String rootId1 = "2.16.840.1.113883.4.391.313855";
     public final String rootId2 = "2.16.840.1.113883.4.391.313855.1";
 

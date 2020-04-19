@@ -8,41 +8,18 @@ import javax.xml.bind.annotation.XmlElement;
 public class Address {
 
     @XmlAttribute
-    public final String use;
+    public String use;
 
     @XmlElement
-    public final String city;
+    public String city;
     @XmlElement(name = "streetAddressLine")
-    public final String streetAddressLine1;
+    public String streetAddressLine1;
     @XmlElement(name = "streetAddressLine")
-    public final String streetAddressLine2;
+    public String streetAddressLine2;
     @XmlElement
-    public final String state;
+    public String state;
     @XmlElement
     public final String country = "US";
     @XmlElement
-    public final String postalCode;
-
-    public Address(String use, String streetAddressLine1, String streetAddressLine2,
-                   String city, String state, String postalCode){
-        this.use = use;
-        this.streetAddressLine1 = streetAddressLine1;
-        this.streetAddressLine2 = streetAddressLine2;
-        this.city = city;
-        this.state = state;
-        this.postalCode = postalCode;
-    }
-
-    public Address(String streetAddressLine, String city, String state, String postalCode) {
-        this(null, streetAddressLine, null, city, state, postalCode);
-    }
-
-    public Address(String use, AddressModel addressModel) {
-        this(use, addressModel.streetAddress1, addressModel.streetAddress2,
-                addressModel.city, addressModel.state, addressModel.postalCode);
-    }
-
-    public Address(AddressModel addressModel) {
-        this(null, addressModel);
-    }
+    public String postalCode;
 }

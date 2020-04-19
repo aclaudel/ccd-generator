@@ -1,7 +1,6 @@
 package clinical.document.ccd;
 
 import clinical.document.header.*;
-import clinical.document.header.PatientId;
 import clinical.document.model.*;
 
 public class CCDGenerator {
@@ -18,21 +17,11 @@ public class CCDGenerator {
 
     private static final LocalEMRConfig config = new LocalEMRConfig();
 
-
     public CCD getCcd() {
-        CCD ccd = new CCD();
-
-        ccd.setPatient(patientModel);
-
-        // TODO
-        ccd.setIds(
-                new PatientId(config.rootId1, patientModel.id, config.assigningAuthority1),
-                new PatientId(config.rootId2, patientModel.id, config.assigningAuthority2),
-                new MedicareId("2.16.840.1.113883.4.572", patientModel.medicareId, "HCID")
-        );
-
-        ccd.setCareTeam(careTeamModel);
-
-        return ccd;
+        CCDBuilder builder = new CCDBuilder(new RecordTargetBuilderImpl(), new ParticipantBuilderImpl());
+        builder.setConfig(config);
+        builder.setPatient(patientModel);
+        builder.setCareTeam(careTeamModel);
+        return builder.buildCCD();
     }
 }

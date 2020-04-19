@@ -9,9 +9,5 @@ public class Participant {
     public final String typeCode = "INS";
 
     @XmlElement
-    public final AssociatedEntity associatedEntity;
-
-    public Participant(AssociatedEntity associatedEntity) {
-        this.associatedEntity = associatedEntity;
-    }
+    public AssociatedEntity associatedEntity;
 }
