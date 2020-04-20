@@ -7,6 +7,11 @@ import clinical.document.shared.Telecom;
 public class ParticipantBuilderImpl implements ParticipantBuilder {
     private String classCode;
     private PersonModel person;
+    private final AddressBuilder addressBuilder;
+
+    public ParticipantBuilderImpl(AddressBuilder addressBuilder) {
+        this.addressBuilder = addressBuilder;
+    }
 
     @Override
     public void setClass(String classCode) {
@@ -26,7 +31,6 @@ public class ParticipantBuilderImpl implements ParticipantBuilder {
         participant.associatedEntity.associatedPerson = new AssociatedPerson(new Name(person.given, person.family));
         if(person.address != null)
         {
-            AddressBuilder addressBuilder = new AddressBuilder();
             addressBuilder.setAddressModel(person.address);
             participant.associatedEntity.address = addressBuilder.buildAddress();
         }

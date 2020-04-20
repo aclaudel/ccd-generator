@@ -18,7 +18,7 @@ public class CCDGenerator {
     private static final LocalEMRConfig config = new LocalEMRConfig();
 
     public CCD getCcd() {
-        CCDBuilder builder = new CCDBuilder(new RecordTargetBuilderImpl(), new ParticipantBuilderImpl());
+        CCDBuilder builder = new CCDBuilder(new RecordTargetBuilderImpl(), new ParticipantBuilderImpl(new AddressBuilderImpl()));
         builder.setConfig(config);
         builder.setPatient(patientModel);
         builder.setCareTeam(careTeamModel);

@@ -1,9 +1,7 @@
 package clinical.document.xml;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.*;
+import javax.xml.namespace.QName;
 import java.io.StringReader;
 import java.io.StringWriter;
 
@@ -16,6 +14,19 @@ public class XmlMarshaller {
     marshaller.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
     final StringWriter writer = new StringWriter();
     marshaller.marshal(content, writer);
+    return writer.getBuffer().toString();
+  }
+
+  public <T> String marshallFragment(T content, Class<T> tClass, String name) throws JAXBException{
+    JAXBContext context = JAXBContext.newInstance(content.getClass());
+    Marshaller marshaller = context.createMarshaller();
+    marshaller.setProperty(Marshaller.JAXB_FRAGMENT, true);
+    JAXBElement<T> jaxbElement =
+            new JAXBElement<>( new QName("", name),
+                    tClass,
+                    content);
+    final StringWriter writer = new StringWriter();
+    marshaller.marshal(jaxbElement, writer);
     return writer.getBuffer().toString();
   }
 

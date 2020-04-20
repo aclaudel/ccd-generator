@@ -52,8 +52,8 @@ class CCDBuilderTest {
         CCD ccd = ccdBuilder.buildCCD();
         XmlMarshaller marshaller = new XmlMarshaller();
 
-            String marshalled = marshaller.marshall(ccd);
-            XmlAssert.assertThat(marshalled)
+        String marshalled = marshaller.marshall(ccd);
+        XmlAssert.assertThat(marshalled)
             .and(this.xml)
             .areIdentical();
         } catch (JAXBException e) {

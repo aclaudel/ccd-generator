@@ -1,13 +1,9 @@
 package clinical.document.header;
 
-import clinical.document.ccd.AddressBuilder;
+import clinical.document.ccd.AddressBuilderImpl;
 import clinical.document.model.LocalEMRConfig;
 import clinical.document.model.PatientModel;
 import clinical.document.shared.Telecom;
-
-import java.util.Arrays;
-
-import static java.util.Arrays.asList;
 
 public class RecordTargetBuilderImpl implements RecordTargetBuilder {
     private LocalEMRConfig config;
@@ -49,7 +45,7 @@ public class RecordTargetBuilderImpl implements RecordTargetBuilder {
         email.value = patientModel.email;
         recordTarget.patientRole.telecoms.add(email);
 
-        AddressBuilder addressBuilder = new AddressBuilder();
+        AddressBuilderImpl addressBuilder = new AddressBuilderImpl();
         addressBuilder.setUse("HP");
         addressBuilder.setAddressModel(patientModel.address);
         recordTarget.patientRole.address = addressBuilder.buildAddress();
